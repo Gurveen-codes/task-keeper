@@ -3,6 +3,7 @@ import { TaskContext } from '../contexts/TaskContext'
 
 const NavBar = () => {
 	const { tasks } = useContext(TaskContext)
+
 	return (
 		<div className="navbar">
 			<h1 className="nav-title">My Tasks</h1>

@@ -4,6 +4,7 @@ import TaskItem from './TaskItem'
 
 const TaskList = () => {
 	const { tasks } = useContext(TaskContext)
+
 	return (
 		<div className="task-list">
 			<ul>

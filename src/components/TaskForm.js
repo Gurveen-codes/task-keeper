@@ -3,7 +3,9 @@ import { TaskContext } from '../contexts/TaskContext'
 
 const TaskForm = () => {
 	const [task, setTask] = useState('')
+
 	const { addTask } = useContext(TaskContext)
+
 	const submitHandler = (e) => {
 		e.preventDefault()
 		addTask(task)
