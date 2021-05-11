@@ -8,12 +8,19 @@ const TaskContextProvider = (props) => {
 		{ title: 'Do Something', id: uuid() },
 		{ title: 'Work out', id: uuid() },
 	])
+
+	//Add task
+	const addTask = (task) => {
+		setTasks([...tasks, { title: task, id: uuid() }])
+	}
+
+	//Remove task
 	const removeTask = (id) => {
 		setTasks(tasks.filter((task) => task.id !== id))
 	}
 
 	return (
-		<TaskContext.Provider value={{ tasks, removeTask }}>
+		<TaskContext.Provider value={{ tasks, removeTask, addTask }}>
 			{props.children}
 		</TaskContext.Provider>
 	)
