@@ -5,7 +5,7 @@ const TaskItem = ({ task }) => {
 	const { removeTask } = useContext(TaskContext)
 
 	return (
-		<li className="task-item" key={task.id} onClick={() => removeTask(task.id)}>
+		<li className="task-item" onClick={() => removeTask(task.id)}>
 			{task.title}
 		</li>
 	)

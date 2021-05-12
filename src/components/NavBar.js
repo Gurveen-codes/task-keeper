@@ -7,7 +7,9 @@ const NavBar = () => {
 	return (
 		<div className="navbar">
 			<h1 className="nav-title">My Tasks</h1>
-			<p className="nav-desc">Remaining tasks: {tasks.length}</p>
+			<p className="nav-desc">
+				Remaining tasks: <span className="task-length">{tasks.length}</span>
+			</p>
 		</div>
 	)
 }

@@ -6,7 +6,7 @@ import TaskContextProvider from './contexts/TaskContext'
 
 const App = () => {
 	return (
-		<div className="App">
+		<div className="App ">
 			<TaskContextProvider>
 				<NavBar></NavBar>
 				<TaskList></TaskList>
