@@ -4,19 +4,20 @@ import { v4 as uuid } from 'uuid'
 export const TaskContext = createContext()
 
 const TaskContextProvider = (props) => {
-	const [tasks, setTasks] = useState([
-		{ title: 'Do Something', id: uuid() },
-		{ title: 'Work out', id: uuid() },
-	])
+	const tasksStored = localStorage.getItem('tasks')
+	const initialTasks = tasksStored ? JSON.parse(tasksStored) : []
+	const [tasks, setTasks] = useState(initialTasks)
 
 	//Add task
-	const addTask = (task) => {
-		setTasks([...tasks, { title: task, id: uuid() }])
+	const addTask = async (task) => {
+		await setTasks([...tasks, { title: task, id: uuid() }])
+		localStorage.setItem('tasks', JSON.stringify(tasks))
 	}
 
 	//Remove task
 	const removeTask = (id) => {
 		setTasks(tasks.filter((task) => task.id !== id))
+		localStorage.setItem('tasks', JSON.stringify(tasks))
 	}
 
 	return (
