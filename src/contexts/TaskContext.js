@@ -5,7 +5,12 @@ export const TaskContext = createContext()
 
 const TaskContextProvider = (props) => {
 	const tasksStored = localStorage.getItem('tasks')
-	const initialTasks = tasksStored ? JSON.parse(tasksStored) : []
+	const initialTasks = tasksStored
+		? JSON.parse(tasksStored)
+		: [
+				{ title: 'Learn JavaScript', id: uuid() },
+				{ title: 'Make Projects', id: uuid() },
+		  ]
 	const [tasks, setTasks] = useState(initialTasks)
 
 	//Add task
