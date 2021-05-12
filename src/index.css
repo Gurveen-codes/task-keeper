@@ -32,6 +32,12 @@ body {
 	--dark-3: hsl(320, 20%, 5%);
 }
 
+.toggle-btn {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}
+
 .App {
 	width: clamp(300px, 50%, 700px);
 	margin: 2em auto;
