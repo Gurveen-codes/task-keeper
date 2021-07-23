@@ -8,7 +8,10 @@ import { ThemeContext } from './contexts/ThemeContext'
 const App = () => {
 	const { isLightTheme } = useContext(ThemeContext)
 	return (
-		<div className={isLightTheme ? 'App' : 'App dark'}>
+		<div
+			data-testid="app-component"
+			className={isLightTheme ? 'App' : 'App dark'}
+		>
 			<TaskContextProvider>
 				<NavBar></NavBar>
 				<TaskList></TaskList>
